@@ -23,16 +23,7 @@ const BottomNavbar = () => {
           labelPosition: "below-icon",
         }}
       >
-        <Tab.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{
-            tabBarLabel: "Home",
-            tabBarIcon: ({ color, size }) => (
-              <Icon name="home" color={color} size={size} />
-            ),
-          }}
-        />
+        
         <Tab.Screen
           name="Settings"
           component={SettingsScreen}
@@ -50,6 +41,16 @@ const BottomNavbar = () => {
             tabBarLabel: "Screen 3",
             tabBarIcon: ({ color, size }) => (
               <Icon name="star" color={color} size={size} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            tabBarLabel: "Home",
+            tabBarIcon: ({ color, size }) => (
+              <Icon name="home" color={color} size={size} />
             ),
           }}
         />
