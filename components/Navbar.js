@@ -14,68 +14,65 @@ const Tab = createBottomTabNavigator();
 
 const BottomNavbar = () => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        initialRouteName="Home"
-        tabBarOptions={{
-          activeTintColor: "#f00",
-          inactiveTintColor: "#000",
-          labelPosition: "below-icon",
+    <Tab.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        activeTintColor: "#f00",
+        inactiveTintColor: "#000",
+        labelPosition: "below-icon",
+      }}
+    >
+      <Tab.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{
+          tabBarLabel: "Settings",
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="cog" color={color} size={size} />
+          ),
         }}
-      >
-        
-        <Tab.Screen
-          name="Settings"
-          component={SettingsScreen}
-          options={{
-            tabBarLabel: "Settings",
-            tabBarIcon: ({ color, size }) => (
-              <Icon name="cog" color={color} size={size} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Screen3"
-          component={Screen3}
-          options={{
-            tabBarLabel: "Screen 3",
-            tabBarIcon: ({ color, size }) => (
-              <Icon name="star" color={color} size={size} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{
-            tabBarLabel: "Home",
-            tabBarIcon: ({ color, size }) => (
-              <Icon name="home" color={color} size={size} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Screen4"
-          component={Screen4}
-          options={{
-            tabBarLabel: "Screen 4",
-            tabBarIcon: ({ color, size }) => (
-              <Icon name="globe" color={color} size={size} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Screen5"
-          component={Screen5}
-          options={{
-            tabBarLabel: "Screen 5",
-            tabBarIcon: ({ color, size }) => (
-              <Icon name="user" color={color} size={size} />
-            ),
-          }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
+      />
+      <Tab.Screen
+        name="Screen3"
+        component={Screen3}
+        options={{
+          tabBarLabel: "Screen 3",
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="star" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: "Home",
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="home" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Screen4"
+        component={Screen4}
+        options={{
+          tabBarLabel: "Screen 4",
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="globe" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Screen5"
+        component={Screen5}
+        options={{
+          tabBarLabel: "Screen 5",
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="user" color={color} size={size} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
   );
 };
 
