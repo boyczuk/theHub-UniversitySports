@@ -4,9 +4,6 @@ import { useNavigation } from "@react-navigation/native";
 import { styles } from "./styles/HomeStyles";
 import TeamHome from "./subpages/TeamHome";
 
-{
-  /* Change this to import from external source that tracks user's favourite team */
-}
 const teams = [
   { name: "Team 1", id: 1 },
   { name: "Team 2", id: 2 },
@@ -16,25 +13,28 @@ const teams = [
 ];
 
 const Home = () => {
-  const [isButtonPressed, setIsButtonPressed] = useState(false);
+  const navigation = useNavigation();
 
-  const handleButtonPress = () => {
-    setIsButtonPressed(true);
+  const navigateToTeamHome = () => {
+    // Modify so that key of team is passed
+    // displaying actual team
+    navigation.navigate("TeamHome");
   };
 
   return (
     <View style={styles.container}>
       {/* favourite teams */}
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-        {teams.map((team) => (
-          <View style={styles.teamButton} key={team.id}>
-            <Button title={team.name} onPress={handleButtonPress} />
-          </View>
-        ))}
+        <View style={styles.buttonContainer}>
+          {teams.map((team) => (
+            <View style={styles.teamButton} key={team.id}>
+              <Button title={team.name} onPress={navigateToTeamHome} />
+            </View>
+          ))}
+        </View>
       </ScrollView>
 
       <ScrollView>
-        {isButtonPressed && <TeamHome />}
         <View style={styles.container}>
           {/* user feed */}
           <View style={styles.categoryContainer}>

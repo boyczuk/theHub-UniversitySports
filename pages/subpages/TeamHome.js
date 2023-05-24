@@ -10,7 +10,10 @@ import {
 import { styles } from "../styles/TeamHomeStyle";
 
 {
-  /* These stats can be imported externally via scraping or api */
+  /* These stats can be imported externally via scraping or api 
+     Also at some point need to separate each subpage here into their 
+     own react component so that it can be more efficient when updating/collecting info
+  */
 }
 const teams = [
   { name: "Team 1", logo: require("./images/favicon.png"), id: 1 },

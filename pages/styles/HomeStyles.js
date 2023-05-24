@@ -25,18 +25,25 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
   },
+  buttonContainer: {
+    flexDirection: "row",
+    marginBottom: 20,
+    marginTop: 40,
+  },
   teamButton: {
     paddingHorizontal: 20,
     paddingVertical: 10,
-    backgroundColor: "#f5f5f5",
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: "#ccc",
+    backgroundColor: "transparent",
+    borderRadius: 10,
     marginRight: 10,
+    borderWidth: 1,
+    height: 60,
+    borderColor: "#007AFF",
   },
   buttonText: {
     fontSize: 16,
     fontWeight: "bold",
+    color: "#007AFF",
   },
 });
 
