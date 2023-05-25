@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 import TeamHome from "../pages/subpages/TeamHome";
+import PlayerHome from "../pages/subpages/PlayerHome";
 
 import Home from "../pages/Home";
 import SettingsScreen from "../pages/SettingsScreen";
@@ -22,6 +23,7 @@ const HomeStack = () => (
       }}
     />
     <Stack.Screen name="TeamHome" component={TeamHome} />
+    <Stack.Screen name="PlayerHome" component={PlayerHome} />
   </Stack.Navigator>
 );
 

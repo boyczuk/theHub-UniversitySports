@@ -8,6 +8,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { styles } from "../styles/TeamHomeStyle";
+import { useNavigation } from "@react-navigation/native";
+import PlayerHome from "./PlayerHome";
 
 {
   /* These stats can be imported externally via scraping or api 
@@ -181,10 +183,22 @@ const PlayerStatsTable = () => {
 };
 
 const PlayerList = ({ players }) => {
+  const navigation = useNavigation();
+
+  const navigateToPlayer = () => {
+    // Modify so that key of player is passed
+    // displaying actual player
+    navigation.navigate("PlayerHome");
+  };
+
   return (
     <View style={styles.container}>
       {players.map((player) => (
-        <View key={player.id} style={styles.playerContainer}>
+        <TouchableOpacity
+          key={player.id}
+          style={styles.playerContainer}
+          onPress={() => navigateToPlayer()}
+        >
           <Image
             source={require("./images/placeholder-face-big.png")}
             style={styles.playerImage}
@@ -195,7 +209,7 @@ const PlayerList = ({ players }) => {
               #{player.jerseyNumber} - {player.position}
             </Text>
           </View>
-        </View>
+        </TouchableOpacity>
       ))}
     </View>
   );
